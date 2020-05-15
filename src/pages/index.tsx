@@ -2,5 +2,10 @@ import React from "react";
 import firebase from "firebase";
 
 export default () => {
-  return <div>Firebase App Name: {firebase.app().name}</div>;
+  const [name, setName] = React.useState("");
+  React.useEffect(() => {
+    setName(firebase.app().name);
+  });
+  
+  return <div>Firebase App Name: {name}</div>;
 };
